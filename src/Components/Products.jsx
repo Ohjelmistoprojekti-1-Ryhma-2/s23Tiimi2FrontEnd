@@ -7,6 +7,8 @@ const API_URL = '/api/products';
 
 const Products = () => {
   const [rowData, setRowData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +22,9 @@ const Products = () => {
         setRowData(data);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setError('An error occurred while fetching data');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -35,13 +40,17 @@ const Products = () => {
 
   return (
     <div className="ag-theme-material" style={{ height: 700, width: '100%' }}>
-      <AgGridReact
-        rowData={rowData}
-        columnDefs={columns}
-        pagination={true}
-        paginationPageSize={100}
-        rowHeight={50}
-      />
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+      {!loading && !error && (
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columns}
+          pagination={true}
+          paginationPageSize={100}
+          rowHeight={50}
+        />
+      )}
     </div>
   );
 };

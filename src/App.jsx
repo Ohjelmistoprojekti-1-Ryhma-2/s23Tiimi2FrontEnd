@@ -1,7 +1,19 @@
 
-import Products from './Components/Products'
+import React, { useState } from 'react'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Main from './components/Main'
+import Products from './components/Products'
+import About from './components/About'
+
+
 export default function App() {
- 
+
+  const [renderedPage, setRenderedPage] = useState("main")
+
+  const navigate = (event, renderedPage) => {
+    setRenderedPage(renderedPage)
+  }
 
   return (
     <div className="App">
