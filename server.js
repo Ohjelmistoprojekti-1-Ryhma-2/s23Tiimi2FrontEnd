@@ -1,19 +1,16 @@
-// backend.js
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
 const port = 8080;
 
-// Allow requests from http://localhost:5174
+// Allow requests from http://localhost:5173
 app.use(cors({
-  origin: 'http://localhost:5174',
+  origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 204,
 }));
-
-// Your other route handling goes here
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
@@ -25,6 +22,6 @@ app.options('*', (req, res) => {
 });
 
 app.get('/api/products', (req, res) => {
-  // Your route handling logic goes here
+  // ... Tässä käsitellään itse reitti ...
   res.json({ /* your response data */ });
 });
