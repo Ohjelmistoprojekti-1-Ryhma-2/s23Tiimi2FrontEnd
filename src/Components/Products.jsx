@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
+import { AgGridReact } from 'ag-grid-react';
+import React, { useEffect, useState } from 'react';
 
 const API_URL = '/api/products';
 
@@ -36,6 +36,7 @@ const Products = () => {
     { headerName: 'Type', field: 'type', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Color', field: 'color', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Price', field: 'price', sortable: true, filter: true },
+    { headerName: 'Manufacturer', field: 'manufacturer.name', sortable: true, filter: 'agTextColumnFilter' },
   ];
 
   return (
