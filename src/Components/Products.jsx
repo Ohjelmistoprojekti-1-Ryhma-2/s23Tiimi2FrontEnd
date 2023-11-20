@@ -19,7 +19,7 @@ const Products = () => {
         }
 
         const data = await response.json();
-        setRowData(data);
+        setRowData(data._embedded.products);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError('An error occurred while fetching data');
@@ -32,11 +32,10 @@ const Products = () => {
   }, []);
 
   const columns = [
-    { headerName: 'ID', field: 'id', sortable: true, filter: true },
     { headerName: 'Type', field: 'type', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Color', field: 'color', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Price', field: 'price', sortable: true, filter: true },
-    { headerName: 'Manufacturer', field: 'manufacturer.name', sortable: true, filter: 'agTextColumnFilter' },
+    { headerName: 'Manufacturer', field: 'manufacturer', sortable: true, filter: 'agTextColumnFilter' },
   ];
 
   return (
