@@ -3,7 +3,7 @@ import 'ag-grid-community/styles/ag-theme-material.css';
 import { AgGridReact } from 'ag-grid-react';
 import React, { useEffect, useState } from 'react';
 
-const API_URL = '/api/products';
+const API_URL = 'http://localhost:8080/api/products';
 
 const Products = () => {
   const [rowData, setRowData] = useState([]);
