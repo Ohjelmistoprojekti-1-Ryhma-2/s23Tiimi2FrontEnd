@@ -3,7 +3,7 @@ import 'ag-grid-community/styles/ag-theme-material.css';
 import { AgGridReact } from 'ag-grid-react';
 import React, { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:8080/api/products';
+const API_URL = 'http://localhost:8080/test';
 
 const Products = () => {
   const [rowData, setRowData] = useState([]);
@@ -13,13 +13,13 @@ const Products = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(API_URL)
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
 
         const data = await response.json();
-        setRowData(data._embedded.products);
+        setRowData(data);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError('An error occurred while fetching data');
@@ -35,7 +35,7 @@ const Products = () => {
     { headerName: 'Type', field: 'type', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Color', field: 'color', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Price', field: 'price', sortable: true, filter: true },
-    { headerName: 'Manufacturer', field: 'manufacturer', sortable: true, filter: 'agTextColumnFilter' },
+    { headerName: 'Manufacturer', field: 'manufacturer.name', sortable: true, filter: 'agTextColumnFilter' },
   ];
 
   return (
