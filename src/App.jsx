@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Main from './components/Main'
-import Products from './components/Products'
+import Products from './Components/Products'
 import About from './components/About'
+import RegisterForm from './components/RegisterForm'
+
 
 
 export default function App() {
@@ -21,11 +23,15 @@ export default function App() {
         <Tab value="main" label="Main" />
         <Tab value="products" label="Products" />
         <Tab value="about" label="About" />
+        <Tab value="register" label="Register here!" />
+
       </Tabs>
       {renderedPage === "main" && <Main />}
       {renderedPage === "products" && <Products />}
       {renderedPage === "about" && <About />}
+      {renderedPage === "register" && <RegisterForm />}
     </div>
+
 
   )
 }
