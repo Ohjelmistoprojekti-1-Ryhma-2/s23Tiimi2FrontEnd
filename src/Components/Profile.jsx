@@ -110,7 +110,10 @@ const Profile = () => {
             {loggedIn && (
                 <>
                     <div>
-                        <p>You are logged in as: {user.name}</p>
+                        <p>Name: {user.name}</p>
+                        <p>Address: {user.address}</p>
+                        <p>Phone: {user.phone}</p>
+                        <p>E-Mail: {user.email}</p>
                     </div>
                     <div>
                         <Button onClick={deleteProfile}>Request profile removal</Button>
