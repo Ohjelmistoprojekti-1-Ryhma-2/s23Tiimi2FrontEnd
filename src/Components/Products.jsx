@@ -32,10 +32,37 @@ const Products = () => {
   }, []);
 
   const columns = [
-    { headerName: 'Type', field: 'type', sortable: true, filter: 'agTextColumnFilter' },
-    { headerName: 'Color', field: 'color', sortable: true, filter: 'agTextColumnFilter' },
-    { headerName: 'Price', field: 'price', sortable: true, filter: true },
-    { headerName: 'Manufacturer', field: 'manufacturer.name', sortable: true, filter: 'agTextColumnFilter' },
+    {
+      headerName: "Name",
+      field: "name",
+      sortable: true,
+      filter: "agTextColumnFilter",
+    },
+    {
+      headerName: "Type",
+      field: "type.category",
+      sortable: true,
+      filter: "agTextColumnFilter",
+    },
+    {
+      headerName: "Size",
+      field: "size",
+      sortable: true,
+      filter: "agTextColumnFilter",
+    },
+    {
+      headerName: "Color",
+      field: "color",
+      sortable: true,
+      filter: "agTextColumnFilter",
+    },
+    { headerName: "Price", field: "price", sortable: true, filter: true },
+    {
+      headerName: "Manufacturer",
+      field: "manufacturer.name",
+      sortable: true,
+      filter: "agTextColumnFilter",
+    },
   ];
 
   return (
