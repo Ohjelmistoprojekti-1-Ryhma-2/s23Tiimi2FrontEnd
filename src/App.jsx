@@ -1,14 +1,12 @@
-
 import React, { useState } from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import Main from './components/Main'
+import Main from './Components/Main'
 import Products from './Components/Products'
-import About from './components/About'
-import RegisterForm from './components/RegisterForm'
-import Profile from './components/Profile'
-
-
+import About from './Components/About'
+import RegisterForm from './Components/RegisterForm'
+import Profile from './Components/Profile'
+import "./App.css";
 
 export default function App() {
 
@@ -20,20 +18,20 @@ export default function App() {
 
   return (
     <div className="App">
-      <Tabs value={renderedPage} onChange={navigate}>
+      <Tabs value={renderedPage} onChange={navigate} centered>
         <Tab value="main" label="Main" />
         <Tab value="products" label="Products" />
         <Tab value="about" label="About" />
         <Tab value="register" label="Register here!" />
         <Tab value="profile" label="Profile" />
       </Tabs>
-      {renderedPage === "main" && <Main />}
-      {renderedPage === "products" && <Products />}
-      {renderedPage === "about" && <About />}
-      {renderedPage === "register" && <RegisterForm />}
-      {renderedPage === "profile" && <Profile />}
+      <div className="content-area">
+        {renderedPage === "main" && <Main />}
+        {renderedPage === "products" && <Products />}
+        {renderedPage === "about" && <About />}
+        {renderedPage === "register" && <RegisterForm />}
+        {renderedPage === "profile" && <Profile />}
+      </div>
     </div>
-
-
-  )
+  );
 }

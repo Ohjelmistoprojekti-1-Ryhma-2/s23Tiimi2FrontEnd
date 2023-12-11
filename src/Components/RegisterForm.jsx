@@ -1,6 +1,7 @@
 // RegisterForm.js
 import React, { useState } from 'react';
 import { Grid, TextField, Button } from '@mui/material';
+import "../App.css";
 
 
 const RegisterForm = () => {

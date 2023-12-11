@@ -6,6 +6,8 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import TextField from '@mui/material/TextField'
+import "../App.css";
+
 
 const API_URL = 'http://localhost:8080/api/customers/search/findByName?name=';
 
@@ -126,4 +128,4 @@ const Profile = () => {
 
 }
 
-export default Profile
+export default Profile;

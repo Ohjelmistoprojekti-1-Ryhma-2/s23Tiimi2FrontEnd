@@ -2,8 +2,10 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 import { AgGridReact } from 'ag-grid-react';
 import React, { useEffect, useState } from 'react';
+import "../App.css";
 
-const API_URL = 'http://localhost:8080/test';
+
+const API_URL = "https://dogstore.onrender.com/products";
 
 const Products = () => {
   const [rowData, setRowData] = useState([]);
