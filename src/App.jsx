@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import Main from './Components/Main'
+import Main2 from './Components/Main2'
 import Products from './Components/Products'
 import About from './Components/About'
 import RegisterForm from './Components/RegisterForm'
@@ -26,7 +26,7 @@ export default function App() {
         <Tab value="profile" label="Profile" />
       </Tabs>
       <div className="content-area">
-        {renderedPage === "main" && <Main />}
+        {renderedPage === "main" && <Main2 />}
         {renderedPage === "products" && <Products />}
         {renderedPage === "about" && <About />}
         {renderedPage === "register" && <RegisterForm />}
