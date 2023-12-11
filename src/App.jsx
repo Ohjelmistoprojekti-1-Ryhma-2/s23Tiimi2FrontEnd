@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
-import Main2 from './Components/Main2'
-import Products from './Components/Products'
-import About from './Components/About'
-import RegisterForm from './Components/RegisterForm'
-import Profile from './Components/Profile'
+import React, { useState } from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Main2 from "./Components/Main2";
+import Products from "./Components/Products";
+import About from "./Components/About";
+import RegisterForm from "./Components/RegisterForm";
+import Profile from "./Components/Profile";
 import "./App.css";
 
 export default function App() {
-
-  const [renderedPage, setRenderedPage] = useState("main")
+  const [renderedPage, setRenderedPage] = useState("main");
 
   const navigate = (event, renderedPage) => {
-    setRenderedPage(renderedPage)
-  }
+    setRenderedPage(renderedPage);
+  };
 
   return (
     <div className="App">
